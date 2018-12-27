@@ -1,9 +1,5 @@
-<!DOCTYPE HTML5>
-<html>
-	<head>
-		<title>UBlog.com with Flask</title>
-	</head>
-	<body>
+{% extends "parent.html" %}
+{% block body_content %}
 		<h1><center>WELCOME TO UBLOG - Your Blog</center></h1>
 		<h2>Past blogs : </h2>
 		<!-- Using templating engine JINJA2 -->
@@ -13,11 +9,9 @@
 		<!-- {# {{ ACCESS VARIABLES }} #}-->
 		<!-- {# {% CODE BLOCK END %} #}-->
 		
-		{% for i in blogStream %}	
+		{% for i in blogStream %}
 			<h3>{{ i.author }}</h3>
 			<p>Blogged on {{ i.date }}  on topic "{{ i.Topic }}"</p>
 			<p><i> {{ i.Text }} </i></p>
-		{% endfor %}				
-	</body>
-
-</html>
+		{% endfor %}
+{% endblock body_content %}

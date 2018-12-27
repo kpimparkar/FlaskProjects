@@ -24,7 +24,7 @@ oldBlogs =[
 @app.route('/')
 @app.route('/home')
 def home():
-	return render_template("home.html",blogStream=oldBlogs)
+	return render_template("home.html",blogStream=oldBlogs, iTitle='UBlog.com')
 
 @app.route('/about')
 def about():
