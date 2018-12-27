@@ -1,0 +1,23 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<title>UBlog.com with Flask</title>
+	</head>
+	<body>
+		<h1><center>WELCOME TO UBLOG - Your Blog</center></h1>
+		<h2>Past blogs : </h2>
+		<!-- Using templating engine JINJA2 -->
+		<!-- bligStream was passed through the master .py script -->
+		{# Is JINJA2 comment syntax #}
+		<!-- {# {% CODE BLOCK %} #}-->
+		<!-- {# {{ ACCESS VARIABLES }} #}-->
+		<!-- {# {% CODE BLOCK END %} #}-->
+		
+		{% for i in blogStream %}	
+			<h3>{{ i.author }}</h3>
+			<p>Blogged on {{ i.date }}  on topic "{{ i.Topic }}"</p>
+			<p><i> {{ i.Text }} </i></p>
+		{% endfor %}				
+	</body>
+
+</html>
