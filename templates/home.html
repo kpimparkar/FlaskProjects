@@ -10,8 +10,22 @@
 		<!-- {# {% CODE BLOCK END %} #}-->
 		
 		{% for i in blogStream %}
+			<!--
 			<h3>{{ i.author }}</h3>
 			<p>Blogged on {{ i.date }}  on topic "{{ i.Topic }}"</p>
 			<p><i> {{ i.Text }} </i></p>
+			-->
+			
+			<article class="media content-section">
+			  <div class="media-body">
+				<div class="article-metadata">
+				  <a class="mr-2" href="#">{{ i.author }}</a>
+				  <small class="text-muted">Blogged on {{ i.date }} </small>
+				</div>
+				<h4><a class="article-title" href="#">{{ i.Topic }}</a></h4>
+				<p class="article-content">{{ i.Text }}</p>
+			  </div>
+			</article>
+
 		{% endfor %}
 {% endblock body_content %}
